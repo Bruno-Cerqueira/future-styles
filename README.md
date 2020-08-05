@@ -4,8 +4,8 @@ Project to practice css features and latest news.
 
 ## Project Setup
 
-* npm install -g parcel-bundler
 * npm install
+* npm build
 * npm start
 
 ## Dependencies
