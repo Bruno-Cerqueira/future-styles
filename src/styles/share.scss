@@ -14,6 +14,10 @@ main {
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.25);
+  }
 }
 
 .nav-container {
@@ -77,4 +81,14 @@ main {
       }
     } 
   }
+}
+
+footer {
+  position: relative;
+  color: rgb(126, 127, 127);
+  height: 80px;
+  background-color: rgb(199, 194, 114);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
