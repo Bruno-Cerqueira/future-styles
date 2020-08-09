@@ -13,3 +13,5 @@ Project to practice css features and latest news.
 * npm 6.13.4
 * parcel-bundler 1.12.4
 * node-sass 4.14.1
+
+### Check the result https://relaxed-mclean-a33b3b.netlify.app/

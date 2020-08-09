@@ -1,3 +1,7 @@
+* {
+  box-sizing : border-box;
+}
+
 @mixin appointment-button {
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -15,10 +19,9 @@
   background: radial-gradient(rgb(199, 194, 114), rgb(234, 230, 168));
   color: #7E7F7F;
   height: calc(100% - 80px);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   .showcase {
-    font-family: 'Montserrat', sans-serif;
     background-image: url("../img/tooth.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -71,11 +74,11 @@
     flex-direction: column;
     align-items: center;
     background: #333233;
-    min-height: 470px;
-    font-family: 'Montserrat', sans-serif;
+    min-height: 390px;
+    padding-top: 40px;
 
     > h2 {
-      margin: 50px;
+      margin: 20px 0 50px 0;
       color:rgb(199, 194, 114);
     }
 
@@ -108,6 +111,168 @@
     }
   }
 
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #333233;
+    min-height: 360px;
+    padding-top: 40px;
+
+    > h2 {
+      margin: 20px 0;
+      color:rgb(199, 194, 114);
+    }
+
+    > .form-wrapper {
+      width: 100%;
+
+      > form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        padding: 10px 40px 40px;
+        overflow: hidden;
+
+        > .form-side {
+          min-height: 180px;
+
+          > .wrapper-input {
+            position: relative;
+            height: 50px;
+            margin-bottom: 10px;
+            overflow: hidden;
+
+            > input, label, select {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            > input {
+              padding-top: 20px;
+              border: none;
+              background: transparent;
+              outline: none;
+              color:white;
+              font-size: 14px;
+            }
+
+            > select {
+              position: relative;
+              margin-top: 26px;
+              height: 20px;
+              left: -6px;
+              border: none;
+              background: transparent;
+              outline: none;
+              color:#7E7F7F;
+              font-size: 14px;
+            }
+
+            > label {
+              pointer-events: none;
+              border-bottom: 1px solid black;
+              
+              &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                border-bottom: 3px solid rgb(199, 194, 114);
+                transform: translateX(-100%);
+                transition: all 0.5s ease;
+              }
+
+              > .content-input {
+                position: absolute;
+                left: 0;
+                bottom: 5px;
+                transition: all 0.3s ease;
+              }
+            }
+
+            > #treatment-label {
+              border-bottom: 3px solid rgb(199, 194, 114);
+            }
+
+            > input:focus + label .content-input, input:valid + label .content-input {
+              transform: translateY(-150%);
+              font-size: 14px;
+              color: rgb(199, 194, 114);
+            }
+
+            > input:focus + label:after, input:valid + label:after {
+              transform: translateX(0%);
+            }
+          }
+
+          > .wrapper-textarea {
+            position: relative;
+            min-height: 170px;
+            margin-bottom: 10px;
+            overflow: hidden;
+
+            > textarea, label, select {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            > textarea {
+              padding-top: 25px;
+              border: none;
+              background: transparent;
+              outline: none;
+              color:white;
+              font-size: 14px;
+            }
+
+            > label {
+              pointer-events: none;
+              border-bottom: 1px solid black;
+              
+              &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                border-bottom: 3px solid rgb(199, 194, 114);
+                transform: translateX(-100%);
+                transition: all 0.5s ease;
+              }
+
+              > .content-input {
+                position: absolute;
+                left: 0;
+                bottom: 5px;
+                transition: all 0.3s ease;
+              }
+            }
+
+
+            > textarea:focus + label .content-input, textarea:valid + label .content-input {
+              transform: translateY(-900%);
+              font-size: 14px;
+              color: rgb(199, 194, 114);
+            }
+
+            > textarea:focus + label:after, textarea:valid + label:after {
+              transform: translateX(0%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
   > footer {
     > i {
       margin-right: 10px;
