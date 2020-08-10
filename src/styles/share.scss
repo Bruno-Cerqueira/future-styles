@@ -21,13 +21,14 @@ main {
 }
 
 .nav-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
-  margin: auto;
+  width: 100%;
+  padding: 0 50px;
 
-  > h1 {
+  > #logo {
     color: white;
     position: relative;
     &::after {
@@ -43,7 +44,7 @@ main {
     }
   }
 
-  > ul {
+  > .expanded-menu {
     display: flex;
     list-style: none;
 
@@ -81,6 +82,47 @@ main {
       }
     } 
   }
+
+  .dropdown-trigger {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 30px;
+    background: rgba(51, 50, 51, 0.85);
+    z-index: 9999;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+
+    > .dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      color: rgb(199, 194, 114);
+    }
+
+    > .appointment-button {
+      @include appointment-button;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  #menu-input:checked + .dropdown-menu {
+    transform: scaleX(1);
+  }
 }
 
 footer {
@@ -91,4 +133,15 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .nav-container > .dropdown-trigger {
+    display: block;
+  }
+
+  .nav-container > .expanded-menu {
+    display: none;
+  }
 }

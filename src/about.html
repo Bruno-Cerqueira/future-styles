@@ -12,11 +12,20 @@
     <main>
       <div class="nav-container">
         <h1 id="logo">C.D.C</h1>
-        <ul>
+        <ul class="expanded-menu">
           <li><a class="nav-element" href="./index.html">Home</a></li>
           <li><a class="nav-element" href="./about.html">About</a></li>
           <li><a class="appointment-button" href="">Request appointment</a></li>
         </ul>
+        <label for="menu-input" class="dropdown-trigger">
+          <i class="fas fa-bars"></i>
+        </label>
+        <input type="checkbox" name="menu-input" id="menu-input">
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="./index.html">Home</a>
+          <a class="dropdown-item" href="./about.html">About</a>
+          <a class="dropdown-item appointment-button" href="#">Something else here</a>
+        </div>
       </div>
       <section class="about">
         <div class="img-wrapper">
