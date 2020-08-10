@@ -8,12 +8,13 @@ body {
 }
 
 .about {
-  height: calc(100% - 160px);
+  min-height: calc(100% - 160px);
   background: radial-gradient(#9e9e9e, #E2E2e2);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr));
 
   > .img-wrapper {
-    width: 35%;
+    width: 75%;
     margin: auto;
     padding: 30px;
     
@@ -28,7 +29,7 @@ body {
   }
 
   > .content {
-    width: 30%;
+    width: 100%;
     margin: auto;
     padding: 30px;
     > p {
