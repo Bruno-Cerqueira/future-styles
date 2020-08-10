@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "max-nesting-depth": 8,
+    "selector-max-compound-selectors": 9,
+    "declaration-property-value-blacklist": {
+      "/^border/": []
+    },
+    "selector-max-id": 1
+  }
+}
